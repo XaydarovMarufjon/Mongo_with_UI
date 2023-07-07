@@ -6,11 +6,15 @@ import Data from './models/Table.js';
 import Add from './models/Add.js'
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import multer from 'multer';
+import xlsx from 'xlsx';
+
+const upload = multer({ dest: 'uploads/' });
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 dotenv.config();
-
 
 const app = express()
 app.use(express.static('UI'));
@@ -65,6 +69,23 @@ app.get('/data', async (req, res) => {
 
     res.json(allTableData);
   });
+
+
+
+app.post('/upload', upload.single('file'), (req, res) => {
+  const filePath = req.file.path;
+  
+  console.log(filePath);
+  // upload qilingan fileni oqish
+  const workbook = xlsx.readFile(filePath);
+  
+  // 0 chi sheetdan malumotni tanlab olish
+  const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+  const data = xlsx.utils.sheet_to_json(worksheet);
+  console.log(data);
+  // Send a response back to the client
+  res.send('File uploaded and processed successfully');
+});
 
 
 
