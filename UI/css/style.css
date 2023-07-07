@@ -1,0 +1,596 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+/* width   вся полоса прокрутки. */
+::-webkit-scrollbar {
+    width: 15px;
+}
+.mybtn{
+    padding: 5px 10px;
+}
+/* Track  дорожка (индикатор прогресса) полосы прокрутки, где есть серая полоса поверх белой. */
+/* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 0px;
+} */
+
+/* Handle перетаскиваемый маркер прокрутки. */
+/* ::-webkit-scrollbar-thumb {
+    background: lightslategray;
+    border-radius: 5px;
+    
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: lightskyblue;
+} */
+
+/* вертикальная полоса прокрутки ***** ====== *** //// 
+
+/* вертикальная полоса прокрутки. */
+
+::-webkit-scrollbar:vertical {
+    width: 18px;
+    background-color: lightgray;
+    border-top: 3px solid lightcoral;
+
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background: lightslategray;
+    border-radius: 5px;
+    border-top: 3px solid lightcoral;
+    border-bottom: 3px solid lightcoral;
+
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background: lightskyblue;
+}
+
+/* горизонтальная полоса прокрутки ***** ====== *** //// 
+
+/* горизонтальная полоса прокрутки. */
+
+::-webkit-scrollbar:horizontal {
+    height: 18px;
+    background-color: lightgray;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: lightslategray;
+    border-radius: 5px;
+
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #32a1ce;
+}
+
+/* кнопки на полосе прокрутки (стрелки вверх и вниз, прокручивающие по одной строке). */
+
+::-webkit-scrollbar-button {
+    background: lightslategray;
+    border-radius: 0 -7px -7px 0;
+}
+
+/* нижний угол полосы прокрутки,
+  где встречаются горизонтальная и вертикальная полосы прокрутки.
+  Часто это правый нижний угол окна браузера. */
+
+::-webkit-scrollbar-corner {
+    background: lightcoral;
+
+}
+
+/*  перетаскиваемый маркер изменения размера, который появляется в нижнем углу некоторых элементов. */
+
+/* ::-webkit-resizer {
+
+    width: 20px;
+}  */
+
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sectionOpacity {
+    opacity: 0.2
+}
+
+.workPart {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+}
+
+.barsPanel {
+    width: 250px;
+    background-color: lightslategray;
+    padding: 15px 0px 10px 0px;
+    /* transform: translateX(-15px); */
+    overflow: hidden;
+    /* border: 1px solid red; */
+    /* height: 100%; */
+    transition: width 0.5s ease-in-out
+        /* 0.1s */
+    ;
+
+}
+
+.forClock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dayTime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px 30px;
+    /* border: 1px solid red; */
+}
+
+.day,
+.time {
+    /* background-color: lightyellow; */
+    color: steelblue;
+    overflow: hidden ;
+    /* border: 1px solid blue; */
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.seconds {
+    width: fit-content; 
+    height: fit-content;
+    background-color: steelblue; 
+    color: white;
+    padding: 0px 0px;
+    animation: pulsing 1s infinite;
+    /* animation: 1s linear 1s infinite; */
+}
+
+@keyframes pulsing {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) ;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+
+.WorkPanel {
+    width: 100%;
+    text-overflow: clip;
+    padding: 0 28px 0 10px;
+
+}
+
+.navigations a {
+    display: block;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    font-weight: 0;
+    padding: 5px 5px 5px 20px;
+
+}
+
+.navigations a:hover {
+    /* background-position-x: left;
+    background-clip: border-box; */
+    background-color: #555;
+    background-color: #eee;
+    background-size: cover;
+    font-weight: bold;
+    color: black;
+}
+
+.novisibleBars {
+    width: 15px;
+    background-color: #eee;
+
+    /* transition: width 0.8s ease-in 0.1s; */
+}
+
+.inputForm {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+i[target]:hover {
+    cursor: pointer;
+
+}
+
+
+.funsionalPanel {
+    width: 100%;
+    /* position: sticky;
+    top: 0; */
+    margin-bottom: 10px;
+    /* border: 1px solid red; */
+
+}
+
+.horizontalMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    background-color: #eee;
+
+}
+
+.accordion {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: fit-content;
+
+}
+
+.accordion:nth-child(1) {
+    position: relative;
+
+}
+
+.accordion:last-child {
+    position: relative;
+
+}
+
+.cBarsClose {
+    position: absolute;
+    top: 10;
+    left: 5px;
+    color: blue;
+    font-size: 18px;
+    padding: 1px 5px;
+    /* border: 1px solid red ; */
+}
+
+.cBarsClose:hover {
+    background-color: #eee;
+}
+
+.accordionActiv {
+    width: 100%;
+    color: black;
+    font-size: 16px;
+    font-weight: 0;
+    cursor: pointer;
+    /* border: 1px solid yellow; */
+    margin: 0 auto 0 auto;
+    text-align: center;
+    padding: 5px;
+    /* background-color: #ccc; */
+
+}
+
+.accordionActiv:hover {
+    background-color: #ddd;
+    background-size: cover;
+
+}
+
+.activLenta {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline solid green 3px;
+    /* text-decoration-skip-ink: none; */
+    text-underline-position: under;
+    text-underline-offset: 1px;
+
+}
+
+.horizontalPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+    background-color: #eee;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+    transition: height 0.5s ease-in 0s;
+
+}
+
+.horizontalPanelClose {
+    height: 0px;
+
+}
+
+.panel {
+    width: 100%;
+    /* border: 1px solid red; */
+    padding: 5px;
+    display: none;
+
+}
+
+.panelActiv {
+    width: 100%;
+    /* border: 1px solid red; */
+    padding: 5px;
+    display: block;
+}
+
+
+
+.panelUpIcon {
+    position: absolute;
+    top: 10;
+    right: 40px;
+    color: blue;
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 1px;
+    transform: rotate(0);
+    transition: transform 0.5s ease-in-out
+}
+
+.panelRotateIcon {
+    position: absolute;
+    top: 10;
+    right: 40px;
+    color: blue;
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 1px;
+    transform: rotate(-0.50turn);
+    transition: transform 0.5s ease-in-out
+}
+
+.panelUpIcon:hover {
+    background-color: #eee;
+}
+
+.none {
+    display: none;
+}
+
+.app {
+    padding: 0 10px;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 80%;
+    /* когда функционалный панель открыта 67%*/
+}
+
+.appClose {
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 100%;
+    /* когда функционалный панель закрыта 83%*/
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+thead {
+    position: sticky;
+    top: 0px;
+}
+
+tbody td {
+    border: 1px solid #eee;
+}
+
+td {
+    padding: 2px;
+    font-size: 14px;
+    height: fit-content;
+}
+
+.inputInfoF,
+.inputInfoT {
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+th {
+    resize: horizontal;
+    overflow: auto;
+    background-color: #eee;
+    height: 30px;
+    padding: 2px;
+    font-size: 14px;
+    border-right: 2px solid white;
+}
+
+.searchWord td {
+    background-color: #eee;
+    padding-bottom: 4px;
+    border-right: 2px solid white;
+
+}
+
+/* *********************** ///// */
+
+input[target] {
+    border: 1px solid grey;
+    border-radius: 4px;
+    font-size: 10px;
+
+}
+
+.inputInfoT {
+    margin-top: 10px;
+
+}
+
+.w1 {
+    position: relative;
+}
+
+.w1:first-child,
+.w2:first-child {
+    border-left: 1px solid #eee;
+
+}
+
+.w1:last-child,
+.w2:last-child {
+    border-right: 1px solid #eee;
+}
+
+
+.w1 {
+    min-width: 50px;
+    word-break: break-all;
+}
+
+input {
+    height: 25px;
+}
+
+.fio {
+    align-items: center;
+}
+
+.ibt {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 5px 0 0;
+    /* border: 1px solid red; */
+
+}
+
+i {
+    color: gray;
+
+
+}
+
+.fa-sort-down {
+    transform: translateY(-7px);
+
+}
+
+.searchWord td input {
+    margin: 0;
+    width: 100%;
+}
+
+
+.footer {
+    position: sticky;
+    bottom: 0;
+}
+
+
+
+
+
+.modalInfo {
+    position: absolute;
+    width: 85%;
+    border: 1px solid red;
+    top: 5px;
+    left: 225px;
+    padding: 3px;
+    background-color: yellow;
+    color: blue;
+
+    visibility: hidden;
+
+
+    font-size: 18px;
+    text-align: center;
+
+    /* transform: translateY(-1000px); */
+
+    /* transition: transform 10s ease-in-out 5s; */
+
+}
+
+.addCreate {
+    margin-right: 3px;
+    margin-bottom: 3px;
+    padding: 10px;
+    font-size: 14px;
+    float: left;
+    border: none;
+    /* border: 1px solid red; */
+    font-weight: 0;
+
+}
+
+.addCreate:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+
+.addInfo {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    padding: 30px 60px;
+    border: 4px solid #ccc;
+    background-color: #eee;
+
+}
+
+.addInfoOn {
+    display: block;
+
+}
+
+.addInfo p:nth-child(2) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.addInfo button {
+    background-color: steelblue;
+    color: white;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.addExit {
+    background-color: steelblue;
+    color: white;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 3px;
+}

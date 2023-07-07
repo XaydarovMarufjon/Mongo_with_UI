@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css"  href="./css/style.css">
+
+    <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+
+
+
+
+<body>
+
+
+    <section class="section">
+
+        <div class="workPart">
+
+            <div class="barsPanel">
+                <div class="verticalNavigations">
+                    <div class="navigations"><a href=""> Главная </a></div>
+                    <div class="navigations"><a href=""> Все</a></div>
+                    <div class="navigations"><a href=""> 2023</a></div>
+                    <div class="navigations"><a href=""> 2022</a></div>
+
+                </div>
+            </div>
+
+            <div class="forClock">
+
+                <div class="dayTime">
+                    <h2 class="day"> Дата </h2>
+                    <h2 class="time">
+                        <span class="hours">Час</span>
+                        <span class="minutes">Минута</span>
+                        <span class="seconds"> Секунда </span>
+                    </h2>
+                </div>
+
+                <div class="WorkPanel">
+
+                    <div class="funsionalPanel">
+
+                        <div class="horizontalMenu">
+                            <div class="accordion activLenta">
+                                <p class="accordionActiv"><i class="fa-solid fa-bars cBarsClose" target=""
+                                        onclick="cBarsH()"></i>
+                                    1 Главная </p>
+                            </div>
+                            <div class="accordion">
+                                <p class="accordionActiv">2 Создание </p>
+                            </div>
+                            <div class="accordion">
+                                <p class="accordionActiv">3 Внешние данные </p>
+                            </div>
+                            <div class="accordion">
+                                <p class="accordionActiv">4 Рецензирование </p>
+                            </div>
+                            <div class="accordion">
+                                <p class="accordionActiv">5 Справка
+                                    <i class="fa-solid fa-angle-up panelUpIcon" target="" onclick="panelUp()"> </i>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="horizontalPanel">
+                            <div class="panel panelActiv"
+                                style="text-align: center; font-weight: bold; color: blue; font-size: 24px; padding: 40px 0 40px 0 ; background-color: red;">
+                                
+                                <form action="/add" method="post">
+                                    <input type="text" name="one">
+                                    <input type="text" name="two">
+                                    <button type="submit" class="mybtn">send</button>
+                                 </form>
+
+                                1 <br> Функциональные кнопки 
+                            </div>
+                            <p class="panel">
+                                <button class="addCreate" onclick="addInfo()"><i class="fa-solid fa-plus"
+                                        style="color: green"></i> Добавить
+                                </button>
+
+                            </p>
+                            <p class="panel"
+                                style="text-align: center; font-weight: bold; color: blue; font-size: 24px; padding: 40px 0 40px 0 ; ">
+                                3 <br> Функциональные кнопки </p>
+                            <p class="panel"
+                                style="text-align: center; font-weight: bold; color: blue; font-size: 24px; padding: 40px 0 40px 0 ; ""> 4 <br> Функциональные кнопки</p>
+                        <p class=" panel"
+                                style="text-align: center; font-weight: bold; color: blue; font-size: 24px; padding: 40px 0 40px 0 ; ""> 5 <br> Функциональные кнопки</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+                <!--  *** ========================== ***  -->
+
+            <div id=" app" class="app">
+                            <table>
+                                <thead>
+                                    <tr class="tbH">
+                                        <th class="w1">П/н <br>
+                                        </th>
+                                        <th class="w1">ID <br>
+                                            <div class="ibt">
+                                                <i class="fa-solid fa-sort-up onSortId" onclick="onSortId()"> </i>
+                                                <i class="fa-solid fa-sort-down onSortReverseId"
+                                                    onclick="onSortReverseId()"></i>
+                                            </div>
+                                        </th>
+                                        <th class="w1 fio">
+                                            ФИО <br>
+                                            <div class="ibt">
+                                                <i class="fa-solid fa-sort-up onSortName" onclick="onSortFio()"> </i>
+                                                <i class="fa-solid fa-sort-down onSortReverseName"
+                                                    onclick="onSortReverseFio()"></i>
+                                            </div>
+                                        </th>
+                                        <th class="w1 last"> Наименование товара <br>
+                                            <div class="ibt">
+                                                <i class="fa-solid fa-sort-up onSortTovar" onclick="onSortTovar()"> </i>
+                                                <i class="fa-solid fa-sort-down onSortReverseTovar"
+                                                    onclick="onSortReverseTovar()"></i>
+                                            </div>
+                                        </th>
+
+                                    </tr>
+
+                                    <tr class="searchWord ">
+                                        <td class="w2">
+                                            <h6 style="font-size: 1;"> - </h6>
+                                        </td>
+                                        <td class="w2">
+                                            <input type="text" id="searchId" class="searchWordTd" target=""
+                                                placeholder="Поиск id">
+                                        </td>
+                                        <td class="w2">
+                                            <input type="text" id="searchFio" class="searchWordTd" target=""
+                                                placeholder="Поиск ФИО">
+                                        </td>
+                                        <td class="w2 last">
+                                            <input type="text" id="searchTovar" class="searchWordTd" target=""
+                                                placeholder="Поиск товара">
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                 
+
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- <div class="footer" style="background-color:bisque;">footer</div> -->
+
+
+    </section>
+
+
+
+
+
+
+
+
+    <div class="modalInfo"> Ввод числового формата и ввод 'пробела' запрещено
+        <!-- <h1 class="modalInfo"> Попытка ввода числового формата <br> или ввод 'пробела' </h1> -->
+        <!-- <button> закрыть </button> -->
+    </div>
+
+
+
+    <!-- Добавление информации  -->
+
+    <form action="/" method="post" class="addInfo" autocomplete="on">
+        <p><label for="addInfoFio"> Введите имя: </label> <br>
+            <input type="text" name="ism" class="addInfoFio" required placeholder="Ваше имя"> <br>
+        </p>
+        <p> <label for="addInfoTovar"> Введите товар: </label> <br>
+            <input type="text" name="tovar" class="addInfoTovar" required placeholder="Товар">
+        </p>
+        <button type="submit" class="addSave" > Добавить </button>
+        <button type="submit" class="addExit" onclick="addExit()"> Закрыть </button>
+
+    </form>
+
+
+
+
+
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

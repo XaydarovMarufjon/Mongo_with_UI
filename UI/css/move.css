@@ -1,0 +1,25 @@
+.text {
+    width: 50px;
+    border: 1px solid red;
+    background-color: aqua;
+    /* transform: translateY(0px); */
+    animation: pulsing 1s infinite;
+    /* -webkit-animation: pulsing 1s infinite; */
+
+
+    /* -webkit-animation: text 0.9s 0.35s ease alternate infinite;
+    animation: text 0.9s 0.35s ease alternate infinite; */
+
+}
+
+@keyframes pulsing {
+    100% {
+        /* -webkit-transform: scale(0.5, 0.5); */
+        transform:  translateY(0px);
+      }
+    
+      0%   { opacity: 1; }
+      100% { opacity: 0; }
+
+
+}
